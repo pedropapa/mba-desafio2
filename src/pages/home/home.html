@@ -1,14 +1,14 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      MBAMaps
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <p *ngIf="!devicePosition && !failure">Capturando posição do dispositivo...</p>
+  <div [hidden]="!devicePosition" #mapa id="mapa" style="width: 100%; height: 100%"></div>
+
+  <div *ngIf="failure">{{ failure }}</div>
 </ion-content>
